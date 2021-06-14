@@ -4,6 +4,7 @@ import useActions from "../hooks/useActions";
 export default function Prototypes() {
   const prototypes = usePrototypes();
   const { addToOrder } = useActions();
+  console.log(prototypes);
   return (
     <main>
       <div className="prototypes">
@@ -21,7 +22,7 @@ export default function Prototypes() {
                     loop
                     playsInline
                     className="prototype__artwork prototype__edit"
-                    scr={thumbnail}
+                    src={thumbnail}
                     style={{ objectFit: "contain" }}
                   ></video>
                 </div>
