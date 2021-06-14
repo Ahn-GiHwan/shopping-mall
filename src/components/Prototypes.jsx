@@ -4,7 +4,6 @@ import useActions from "../hooks/useActions";
 export default function Prototypes() {
   const prototypes = usePrototypes();
   const { addToOrder } = useActions();
-  console.log(prototypes);
   return (
     <main>
       <div className="prototypes">
