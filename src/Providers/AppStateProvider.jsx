@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import AppStateContext from "../contexts/AppStateContext";
 
 const AppStateProvider = ({ children }) => {
-  const [prototypes, setPrototypes] = useState([
+  const [prototypes] = useState([
     {
       id: "pp-01",
       title: "Kids-story",
@@ -163,7 +163,7 @@ const AppStateProvider = ({ children }) => {
     if (result) {
       alert(`장바구니에서 "${goods}"를 삭제했습니다.`);
       setOrders((orders) => {
-        return orders.filter((order) => order.id != id);
+        return orders.filter((order) => order.id !== id);
       });
     } else {
       return false;

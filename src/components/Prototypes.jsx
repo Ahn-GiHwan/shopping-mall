@@ -14,7 +14,7 @@ export default function Prototypes() {
           };
           return (
             <div className="prototype" key={id}>
-              <a href={pieUrl} target="_black" rel="" noreferrer>
+              <a href={pieUrl} target="_black" rel="noreferrer">
                 <div style={{ padding: "25px 0 33px" }}>
                   <video
                     autoPlay
