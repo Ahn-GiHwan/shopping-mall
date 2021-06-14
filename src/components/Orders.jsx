@@ -16,7 +16,7 @@ export default function Orders() {
         return prototype.price * quantity;
       })
       .reduce((l, r) => l + r, 0);
-  }, [orders]);
+  }, [orders, prototypes]);
 
   if (orders.length === 0) {
     return (

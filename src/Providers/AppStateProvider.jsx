@@ -156,19 +156,26 @@ const AppStateProvider = ({ children }) => {
       }
     });
   }, []);
-  const remove = useCallback((id) => {
-    const goods = prototypes.find((p) => p.id === id).title;
-    const result = window.confirm(`정말로 "${goods}" 상품을 삭제하시겠습니까?`);
 
-    if (result) {
-      alert(`장바구니에서 "${goods}"를 삭제했습니다.`);
-      setOrders((orders) => {
-        return orders.filter((order) => order.id !== id);
-      });
-    } else {
-      return false;
-    }
-  }, []);
+  const remove = useCallback(
+    (id) => {
+      const goods = prototypes.find((p) => p.id === id).title;
+      const result = window.confirm(
+        `정말로 "${goods}" 상품을 삭제하시겠습니까?`
+      );
+
+      if (result) {
+        alert(`장바구니에서 "${goods}"를 삭제했습니다.`);
+        setOrders((orders) => {
+          return orders.filter((order) => order.id !== id);
+        });
+      } else {
+        return false;
+      }
+    },
+    [prototypes]
+  );
+
   const removeAll = useCallback(() => {
     const result = window.confirm(
       "정말로 장바구니의 전체 상품을 삭제하시겠습니까?"
@@ -180,6 +187,7 @@ const AppStateProvider = ({ children }) => {
       return false;
     }
   }, []);
+
   return (
     <AppStateContext.Provider
       value={{
